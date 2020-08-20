@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "b46e1b10-6aa8-44dc-9379-4ffd5721332e",
+		"name": "apiUser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loginApiUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"juan@rodriguez.org\",\n\t\"pass\" : \"hunter2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/loginApiUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"loginApiUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqdWFuQHJvZHJpZ3Vlei5vcmciLCJleHAiOjE1OTc5NTI2MTYsImlhdCI6MTU5NzkzNDYxNn0.VR29syEQYvN2GPM_UXTw3eEt9QyU3qsg0W75bveNsDLRUaNGGOL4Y4uwIYqp2VorZms9B-vrdnsbpBmi04-Tqw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqdWFuQHJvZHJpZ3Vlei5vcmciLCJleHAiOjE1OTc5MjY3NDksImlhdCI6MTU5NzkwODc0OX0.OTBy-Dciy7BvajWwHAWOM0NIFV0BB89hrRFrnmp9qdN5o_x2uZrCivmuRUhHpng-pl6h7ydSHzvMkk-qovYmlQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"randy lagos\",\n\t\"email\" : \"randy@lagos.org\",\n\t\"password\" : \"Abcn12\",\n\t\"phones\" : [\n\t\t{\n\t\t\t\"number\" : \"1234567\",\n\t\t\t\"citycode\" : \"1\",\n\t\t\t\"contrycode\" : \"57\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/insertUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"insertUser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
